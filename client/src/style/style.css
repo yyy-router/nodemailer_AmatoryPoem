@@ -1,0 +1,57 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background: url("http://bing.getlove.cn/bingImage") center no-repeat;
+
+}
+
+.author {
+    width: 80vw;
+    height: 20vh;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: calc((100vh - 20vh)/2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f5f6fa;
+    font-size: 1.3rem;
+    user-select: none;
+}
+
+.sweet {
+    width: 100vw;
+    height: 25vh;
+    position: absolute;
+    bottom: 0%;
+    background-color: rgb(220, 221, 225, 0.5);
+    color: #f5f6fa;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.5vw;
+    user-select: none;
+    font-family: 'Ubuntu', sans-serif;
+    overflow: hidden;
+}
+
+.sweet div {
+    width: 90vw;
+    height: auto;
+    /* 文本溢出隐藏 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+}
