@@ -1,0 +1,2 @@
+# nodemailer_AmatoryPoem
+使用nodejs+nodemailer+axios实现发送情诗邮件功能
