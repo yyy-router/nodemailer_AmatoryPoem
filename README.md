@@ -91,7 +91,7 @@
 > forever常用命令：
 > forever start [程序名]		启动程序
 > forever stop [程序名]		关闭程序
-> forever list			      查看所有已启动的程序
+> forever list            查看所有已启动的程序
 > ```
 
 ##### 使用接口：
