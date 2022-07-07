@@ -1,6 +1,7 @@
 const nodemailer = require('nodemailer');
 const information = require('./src/config');
 const axios = require('axios');
+const schedule = require('node-schedule');
 let time = getTime();
 let showInfo = {};
 let getSweet = () => {
@@ -130,11 +131,22 @@ function sendEmail() {
     })
 
 }
-getSweet();
-getImgInfo();
-setTimeout(() => {
-    sendEmail();
-}, 500)
+// 使用node-schedule模块来实现自动触发功能
+function regularlyPerform() {
+    // 自定义执行时间
+    schedule.scheduleJob({ hour: 8, minute: 25 }, function () {
+        console.log('定时任务已被执行', new Date());
+        getSweet();
+        getImgInfo();
+        setTimeout(() => {
+            sendEmail();
+        }, 500)
+        schedule.gracefulShutdown();
+    })
+
+
+}
+regularlyPerform();
 
 
 
