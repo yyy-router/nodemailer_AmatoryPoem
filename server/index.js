@@ -2,6 +2,7 @@ const nodemailer = require('nodemailer');
 const information = require('./src/config');
 const axios = require('axios');
 const schedule = require('node-schedule');
+const moment = require('moment');
 let time = getTime();
 let showInfo = {};
 let getSweet = () => {
@@ -30,8 +31,9 @@ let getImgInfo = () => {
 
 }
 function getTime() {
-    const today = new Date().toLocaleDateString();
-    const weekday = new Date().toLocaleString("default", { weekday: "long" })
+    moment.locale('zh-cn');
+    const today = moment().utcOffset(8).format('YYYY/MM/DD');
+    const weekday = moment().utcOffset(8).format('dddd');
     return '今天是' + today + ',' + weekday
 }
 
